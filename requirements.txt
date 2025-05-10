@@ -1,0 +1,5 @@
+flask
+ultralytics
+google-generativeai
+opencv-python
+Pillow

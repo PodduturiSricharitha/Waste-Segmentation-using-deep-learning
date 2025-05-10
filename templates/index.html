@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Waste Detection & Disposal Assistant</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background: #f0f4f7;
+        }
+        h1 {
+            color: #333;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        img {
+            max-width: 600px;
+            margin-top: 20px;
+        }
+        .result-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            max-width: 800px;
+        }
+    </style>
+</head>
+<body>
+    <h1>AI Waste Detector & Disposal Guide</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <label>Select an image of waste:</label><br><br>
+        <input type="file" name="file" accept="image/*" required>
+        <button type="submit">Upload & Detect</button>
+    </form>
+
+    {% if image_path %}
+    <div class="result-box">
+        <h2>Detected Image:</h2>
+        <img src="{{ image_path }}" alt="Annotated Image"><br><br>
+
+        <h2>Detected Waste Types:</h2>
+        <ul>
+            {% for cls in classes %}
+                <li><strong>{{ cls }}</strong></li>
+            {% endfor %}
+        </ul>
+
+        <h2>Disposal Instructions:</h2>
+        <ul>
+            {% for cls, instruction in instructions.items() %}
+                <li><strong>{{ cls }}:</strong> {{ instruction|safe }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+</body>
+</html>
