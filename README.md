@@ -9,6 +9,19 @@ This project implements an AI-driven waste detection and segmentation system usi
 - ✅ Flask web interface to upload images and get predictions
 - ✅ Rule-based NLP module for disposal instructions
 
+## 🧠 Model Details
+
+- **Architecture**: YOLOv8-Large (Segmentation variant)
+- **Framework**: Ultralytics YOLOv8 (PyTorch)
+- **Format**: `.pt` model (stored locally)
+- **Classes**: 22 waste categories (e.g., PVC, PET, Organic, Metal)
+
+## 🗃️ Dataset
+
+- **Source**: Aggregated from Roboflow Waste Detection 2.0 + other datasets. you can view and cite the dataset at https://universe.roboflow.com/charitha-ppjnc/waste-detection-2-whu8d/dataset/1
+- **Size**: 1311 annotated images
+- **Annotations**: Mixed format — bounding boxes for some classes, polygon segmentation for others
+
 ## 🚀 How to Run
 
 1. Clone the repository:
@@ -22,30 +35,18 @@ This project implements an AI-driven waste detection and segmentation system usi
    ```bash
    python app.py
 
-🧠 Model
-Architecture: YOLOv8 Large Instance Segmentation
+## 🧩 Tech Stack
 
-Training: Custom dataset from Roboflow (22 classes)
+- **Python**
+- **OpenCV**
+- **Flask** (for UI)
+- **Ultralytics YOLOv8**
+- **Rule-based NLP** for instructions
 
-Format: Trained with .pt weights (stored externally)
+---
 
-🗃️ Dataset
-Source: Roboflow Waste Detection 2.0 (https://universe.roboflow.com/charitha-ppjnc/waste-detection-2-whu8d/dataset/1)
-You can cite the dataset from above link
-Includes real-world mixed-material and recyclable waste images
+## 🙋 Author
 
-📦 Tech Stack
-Python
-
-OpenCV, Ultralytics YOLOv8
-
-Flask
-
-Rule-based NLP
-
-Jinja2 for templating
-
-👩‍💻 Author
-Sricharitha Podduturi
-BVRIT Narsapur | CSE Department
-IEEE ICONAT 2024 paper contributor
+**Sricharitha Podduturi**  
+👩‍🎓 *BVRIT Narsapur — Computer Science*  
+📜 *IEEE ICONAT 2024 Paper Contributor*
