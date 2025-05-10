@@ -17,10 +17,10 @@ This project implements an AI-driven waste detection and segmentation system usi
    cd Waste-Segmentation-using-deep-learning
 2. Install dependencies:
    ```bash
-  pip install -r requirements.txt
+   pip install -r requirements.txt
 3. Run the app:
-  ```bash
-  python app.py
+   ```bash
+   python app.py
 
 🧠 Model
 Architecture: YOLOv8 Large Instance Segmentation
